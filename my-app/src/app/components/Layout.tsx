@@ -20,30 +20,29 @@ const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem("isAuthenticated");
+    const isAuthenticated = localStorage.getItem("token");
     if (!isAuthenticated) {
-      navigate("/login");
+      navigate("/");
     }
   }, [navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
-    navigate("/login");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/");
   };
 
   const menuItems = [
-    { path: "/", icon: Home, label: "Dashboard" },
-    { path: "/activities", icon: Sprout, label: "Green Activities" },
-    { path: "/participate", icon: UserCheck, label: "Participate" },
-    { path: "/my-participation", icon: ClipboardList, label: "My Participation" },
-    { path: "/awareness", icon: Lightbulb, label: "Awareness" },
-    { path: "/notifications", icon: Bell, label: "Notifications" },
-    { path: "/profile", icon: User, label: "Profile" },
+    { path: "/app", icon: Home, label: "Dashboard" },
+    { path: "/app/participate", icon: UserCheck, label: "Participate" },
+    { path: "/app/my-participation", icon: ClipboardList, label: "My Participation" },
+    { path: "/app/awareness", icon: Lightbulb, label: "Awareness" },
+    { path: "/app/profile", icon: User, label: "Profile" },
   ];
 
   const isActive = (path: string) => {
-    if (path === "/") {
-      return location.pathname === "/";
+    if (path === "/app") {
+      return location.pathname === "/app";
     }
     return location.pathname.startsWith(path);
   };

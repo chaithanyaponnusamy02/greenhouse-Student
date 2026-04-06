@@ -82,7 +82,7 @@ const GreenActivities = () => {
         {filteredActivities.map((activity) => (
           <Link
             key={activity.id}
-            to={`/activities/${activity.id}`}
+            to={`/app/activities/${activity.id}`}
             className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-[#4CAF50] transition-all"
           >
             {/* Card Header */}

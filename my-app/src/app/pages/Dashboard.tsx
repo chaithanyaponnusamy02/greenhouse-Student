@@ -93,7 +93,7 @@ const Dashboard = () => {
       <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-semibold text-gray-800">Upcoming Activities</h2>
-          <Link to="/activities" className="text-sm text-[#4CAF50] hover:underline flex items-center gap-1">
+          <Link to="/app/activities" className="text-sm text-[#4CAF50] hover:underline flex items-center gap-1">
             View All
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -103,7 +103,7 @@ const Dashboard = () => {
           {upcomingActivities.map((activity) => (
             <Link
               key={activity.id}
-              to={`/activities/${activity.id}`}
+              to={`/app/activities/${activity.id}`}
               className="block p-4 border border-gray-200 rounded-lg hover:border-[#4CAF50] hover:shadow-md transition-all"
             >
               <div className="flex items-start justify-between gap-4">
