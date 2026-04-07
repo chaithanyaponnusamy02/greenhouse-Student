@@ -6,7 +6,6 @@ import {
   UserCheck,
   ClipboardList,
   Lightbulb,
-  Bell,
   User,
   LogOut,
   Menu,

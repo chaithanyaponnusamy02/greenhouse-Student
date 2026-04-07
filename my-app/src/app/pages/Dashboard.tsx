@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const Dashboard = () => {
   const [participationCount, setParticipationCount] = useState(0);
-  const [greenScore, setGreenScore] = useState(72);
+  const greenScore = 72;
 
   useEffect(() => {
     const participations = JSON.parse(localStorage.getItem("participations") || "[]");
